@@ -9,11 +9,48 @@
         <title>Dodo talks - κεντρο λογοθεραπείας</title>
         <!-- Font Awesome icons (free version)-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script>
+        <!-- Bootstrap core JS-->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet">
         <!-- Fonts CSS-->
         <link rel="stylesheet" href="css/heading.css">
         <link rel="stylesheet" href="css/body.css">
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                    const options = {
+                    threshold: 0.5
+                    };
+
+                    const observer = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const card = entry.target;
+                            const button = card.querySelector('button');
+                            const collapse = card.querySelector('.collapse');
+
+                            if (!collapse.classList.contains('show')) {
+                                button.click();
+                            }
+                        }
+                    });
+                }, options);
+
+                    // Add click event listener to portfolio items
+                    document.querySelectorAll('.portfolio-item').forEach(item => {
+                        item.addEventListener('click', function() {
+                            const targetModal = this.getAttribute('data-target');
+                            $(targetModal).modal('show');
+                        });
+                    });
+
+                document.querySelectorAll('.card').forEach(card => {
+                    observer.observe(card);
+                });    
+            });
+        </script>
     </head>
     <body id="page-top">
         <nav class="navbar navbar-expand-lg bg-secondary fixed-top" id="mainNav">
@@ -21,8 +58,8 @@
                 <button class="navbar-toggler navbar-toggler-right font-weight-bold bg-primary text-black rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu <i class="fas fa-bars"></i></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
-                        <!-- <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio">Υπηρεσίες</a>
-                        </li> -->
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio">Υπηρεσίες</a>
+                        </li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">Σχετικά με εμάς</a>
                         </li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">Επικοινωνία</a>
@@ -59,49 +96,35 @@
                 <!-- Portfolio Grid Items-->
                 <div class="container justify-content-center">
                     <!-- Portfolio Items-->
+                     
                     <div class="row">
-                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1">
-                            <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal0">
-                                <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                    <div class="portfolio-item-caption-content text-center text-black"></div>
-                                </div><img class="img-fluid" src="assets/img/portfolio/proimi.jpg" alt="Log Cabin"/>
-                                <div class="overlay">
-                                    <span>Πρώιμη παρέμβαση</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-sm" data-toggle="modal" data-target="#portfolioModal1">
+                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#fullTextModal2">
                             <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal0">
                                 <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                     <div class="portfolio-item-caption-content text-center text-black"></div>
                                 </div><img class="img-fluid" src="assets/img/portfolio/plant.jpg" alt="Log Cabin"/>
+                                <div class="initial-text">Λογοθεραπεία</div>
                                 <div class="overlay">
-                                    <span>Συνεδρια με την επιβλεψη γονέα</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm" data-toggle="modal" data-target="#portfolioModal1">
-                            <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal0">
-                                <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                    <div class="portfolio-item-caption-content text-center text-black"></div>
-                                </div><img class="img-fluid" src="assets/img/portfolio/climbing_board.jpg" alt="Log Cabin"/>
-                                <div class="overlay">
-                                    <span>Συμβουλευτική</span>
+                                    <div class="hover-text">Αν το παιδί σας δυσκολεύεται να προφέρει συγκεκριμένες λέξεις ή έχει προβλήματα με την ορθογραφία ή την ανάγνωση ή χρησιμοποιεί μικρότερες προτάσεις από τους συνομηλίκους ή δυσκολεύεται να παίξει με άλλους,
+                                        <a href="#" data-toggle="modal" data-target="#fullTextModal2">(Συνέχεια...)</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-sm">
+                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#fullTextModal1">
                             <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal0">
                                 <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                     <div class="portfolio-item-caption-content text-center text-black"></div>
-                                </div><img class="img-fluid" src="assets/img/portfolio/dodo_office.jpg" alt="Log Cabin"/>
+                                </div><img class="img-fluid" src="assets/img/portfolio/proimi.jpg" alt="Log Cabin"/>
+                                <div class="initial-text">Πρώιμη Παρέμβαση</div>
                                 <div class="overlay">
-                                    <span>Διαδραστική Μάθηση</span>
+                                    <div class="hover-text">Η πρώιμη παρέμβαση βοηθά να αποτραπούν ή να αντιμετωπιστούν προβλήματα πριν
+                                        κλιμακωθούν, ενώ προσφέρει και εκπαίδευση για τους γονείς σε τεχνικές που προάγουν τις
+                                        επικοινωνιακές, ομιλητικές και κινητικές δεξιότητες των παιδιών τους.
+                                        <a href="#" data-toggle="modal" data-target="#fullTextModal1">(Συνέχεια...)</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -125,7 +148,6 @@
                                         <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
                                         <div class="divider-custom-line"></div>
                                     </div>
-                                    <!-- Portfolio Modal - Image--><img class="img-fluid rounded mb-5" src="assets/img/portfolio/climb.jpg" alt="New Image"/>
                                     <!-- Portfolio Modal - Text-->
                                     <p class="mb-5">New Image Description</p>
                                     <button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Close Window</button>
@@ -149,16 +171,183 @@
                     <div class="divider-custom-line"></div>
                 </div>
                 <!-- About Section Content-->
-                <div class="row">
-                    <div class="col-lg-4 ml-auto">
-                        <p class="pre-wrap lead">To Dodo Talks είναι ένα κέντρο Λογοθεραπειας διαφορετικό από τα άλλα.  </p>
+                <div class="accordion" id="infoAccordion">
+
+                    <div class="card"  id="cardTwo">
+                        <div class="card-header" id="headingTwo">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                   Δωρεάν συμβουλευτική συνάντηση/αξιολόγηση
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#infoAccordion">
+                            <div class="card-body">
+                                <p class="lead">
+                                    Ελάτε να γνωριστούμε, για να μάθουμε περισσότερα για εσάς γία να βοηθήσουμε,
+                                    να συζητήσουμε τις ανάγκες σας, παρουσιάσουμε τις θεραπευτικές υπηρεσίες που προσφέρουμε.
+
+                                    Καλέστε μας για προγραμματίσουμε ραντεβού για λογοθεραπευτική αξιολόγηση.
+                                </p>
+
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-lg-4 mr-auto">
-                        <p class="pre-wrap lead">Κλείστε ραντεβού για μας γνωρίσετε με μια δωρεάν συνεδρία/αξιολόγηση </p>
+                    <div class="card" id="cardOne">
+                        <div class="card-header" id="headingOne">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Εποπτεία Νέων Λογοθεραπευτών
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#infoAccordion">
+                            <div class="card-body">
+                                <p class=" lead">Αγαπώ την επαφή με νέους θεραπευτές, καθώς μου δίνει την ευκαιρία να μοιραστώ τη
+                                    γνώση και την εμπειρία μου, ενώ ταυτόχρονα μαθαίνω περισσότερα από τα υπέροχα
+                                    πλάσματα που βοηθάμε. Στην αρχή της επαγγελματικής μου πορείας, συνειδητοποίησα ότι η
+                                    εποπτεία είναι θεμελιώδης για την επαγγελματική και θεραπευτική μας εξέλιξη, και αυτή η
+                                    αντίληψη καθοδηγεί τη δουλειά μου μέχρι σήμερα.
+                                    Ως επόπτρια νέων και επι πτυχίω λογοθεραπευτών, παρέχω καθοδήγηση και υποστήριξη
+                                    για την ανάπτυξή τους. Με τη χρήση πλούσιου θεωρητικού και πρακτικού υλικού, δημιουργώ
+                                    ένα ενισχυτικό περιβάλλον που προάγει την ανάπτυξη των θεραπευτικών τους δεξιοτήτων
+                                    και τη βελτίωση των υπηρεσιών τους. Στόχος μου είναι να ενισχύσω την αυτοπεποίθησή
+                                    τους και να τους προετοιμάσω για την παροχή εξαιρετικών υπηρεσιών στους
+                                    θεραπευόμενούς τους.</p>
+                            </div>
+                        </div>
+                                             
+
                     </div>
                 </div>
             </div>
         </section>
+        
+        <!-- Full Text Modal -->
+        <div class="modal fade" id="fullTextModal1" tabindex="-1" role="dialog" aria-labelledby="fullTextModalLabel1" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="fullTextModalLabel1">Πρώιμη Παρέμβαση</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                        Η πρώιμη παρέμβαση επικεντρώνεται στην άμεση διάγνωση και αντιμετώπιση
+                        αναπτυξιακών δυσκολιών, καθώς και σε παιδιά που παρουσιάζουν σημάδια καθυστέρησης,
+                        όπως καθυστέρηση στην ομιλία ή άλλα αναπτυξιακά ορόσημα. Στόχος είναι να παρέχονται
+                        εξατομικευμένες υπηρεσίες, όπως λογοθεραπεία, για να ενισχυθεί η ανάπτυξη του παιδιού
+                        και να αξιοποιηθούν πλήρως οι δυνατότητές του.
+
+                        <p>Έρευνες δείχνουν ότι οι πρώιμες παρεμβάσεις είναι ιδιαίτερα αποτελεσματικές,
+                            επιταχύνοντας την πρόοδο και επιτυγχάνοντας καλύτερα αποτελέσματα. Αυτές οι υπηρεσίες
+                            απευθύνονται σε βρέφη και μικρά παιδιά (0-3 ετών) με αναπτυξιακές καθυστερήσεις ή
+                            διαταραχές, καθώς και σε παιδιά που έχουν καθυστερήσει σε κάποιους αναπτυξιακούς
+                            τομείς, όπως η ομιλία και η κίνηση. Επίσης, περιλαμβάνουν υποστήριξη για τις οικογένειες,
+                            με στόχο την ανάπτυξη νέων δεξιοτήτων και την υπέρβαση δυσκολιών.</p>
+
+                        <p>Η πρώιμη παρέμβαση βοηθά να αποτραπούν ή να αντιμετωπιστούν προβλήματα πριν
+                        κλιμακωθούν, ενώ προσφέρει και εκπαίδευση για τους γονείς σε τεχνικές που προάγουν τις
+                        επικοινωνιακές, ομιλητικές και κινητικές δεξιότητες των παιδιών τους. Περιλαμβάνει ποικιλία
+                        προγραμμάτων, όπως κατ&#39; οίκον επισκέψεις και σχολικές δραστηριότητες, για την ενίσχυση
+                        της κοινωνικής και συναισθηματικής ανάπτυξης των παιδιών.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+                <!-- Full Text Modal -->
+                <div class="modal fade" id="fullTextModal2" tabindex="-1" role="dialog" aria-labelledby="fullTextModalLabel2" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="fullTextModalLabel1">Λογοθεραπεία</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <p>
+                                    <b>Αν το παιδί σας:</b><hr>
+                                    <ul>
+                                        <li> Δυσκολεύεται να προφέρει συγκεκριμένες λέξεις</li>
+                                        <li> Έχει σημάδια καθυστέρησης στην ομιλία του</li>
+                                        <li>Χρησιμοποιεί μικρότερες προτάσεις από τους συνομηλίκους του</li>
+                                        <li>Δε μιλά καθόλου</li>
+                                        <li>Δυσκολεύεται να παίξει με άλλους</li>
+                                        <li>Δυσκολεύεται να αντιληφθεί την λειτουργία αντικειμένων</li>
+                                        <li>&quot;Κολλάει&quot; σε λέξεις</li>
+                                        <li>Αποφεύγει την οπτική επαφή</li>
+                                        <li>Δυσκολεύεται να κάνει φίλους</li>
+                                        <li>Έχει προβλήματα με την ορθογραφία ή την ανάγνωση</li>
+                                        <li>Μιλά με ακατάλληλο τρόπο προς τους άλλους</li>
+                                        <li>Δυσκολεύεται να εκτελέσει εντολές</li>
+                                        <li>Ή έχετε άλλες ανησυχίες για την ομιλία, τη γλώσσα και την επικοινωνία του</li>
+                                    </ul>
+
+                                </p>
+                                <p>
+                                Σας προτείνουμε να επισκεφτείτε έναν λογοθεραπευτή για αξιολόγηση.
+                                Στον χώρο μας, προσφέρουμε μια ευέλικτη προσέγγιση για τη λογοθεραπευτική αξιολόγηση,
+                                συνδυάζοντας επίσημες και ανεπίσημες διαδικασίες, ώστε να αποκτήσουμε μια πλήρη εικόνα
+                                για το επικοινωνιακό προφίλ του παιδιού σας. Η αξιολόγηση μπορεί να γίνει στον χώρο μας,
+                                στην Ζαΐμη 10-12, Μελίσσια, 15127, Αθήνα, ή/και στον δικό σας χώρο ή/και στο σχολείο του
+                                παιδιού, εφόσον είναι αναγκαίο.
+                                </p>
+                                <p>
+                                Μετά την αξιολόγηση, θα συντάξουμε ένα εξατομικευμένο πλάνο παρέμβασης,
+                                προετοιμάζοντας ένα αποτελεσματικό και διασκεδαστικό πρόγραμμα για το παιδί σας,
+                                χρησιμοποιώντας ποικιλία παιχνιδιών και θεραπευτικών υλικών σε κάθε συνεδρία.
+                                Χρησιμοποιώντας στρατηγικές που βασίζονται σε έρευνα, στοχεύουμε να αξιοποιήσουμε την
+                                εμπειρία μας για να βοηθήσουμε εσάς και το παιδί σας στην καθημερινότητά σας.
+                                </p>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        <section class="page-section" id="aboutTutor">
+            <div class="container">
+                <h2 class="page-section-heading text-center text-secondary mb-0">Λογοθεραπεύτρια</h2>
+                <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="assets/img/portfolio/elena.jpg" class="img-fluid" alt="Υπεύθυνη Κέντρου">
+                    </div>
+                    <div class="col-md-6">
+                        <p class="lead">Ας γνωριστούμε…
+                            Ονομάζομαι Έλενα Ξάφη και είμαι παιδιατρική λογοθεραπεύτρια. Είμαι
+                            απόφοιτη του Τμήματος Λογοθεραπείας του Ανώτατου Τεχνολογικού
+                            Ιδρύματος Πελοποννήσου και έχω ολοκληρώσει σημαντικό μέρος της
+                            κλινικής μου άσκησης στο Ευρωπαϊκό Πανεπιστήμιο Κύπρου (EUC) και την
+                            πανεπιστημιακή του κλινική. Επίσης, κατέχω μεταπτυχιακό δίπλωμα από
+                            το Τμήμα Ιατρικής του Εθνικού και Καποδιστριακού Πανεπιστημίου
+                            Αθηνών, στη Διεθνή Ιατρική και τη Διαχείριση Κρίσεων Υγείας.</p>
+                        <p class="lead">Με 15 χρόνια επαγγελματικής εμπειρίας, ξεκίνησα την καριέρα μου στο
+                        Ναυτικό Νοσοκομείο Πειραιά, συμμετέχοντας σε ερευνητικές διαδικασίες.
+                        Παράλληλα, παρείχα εθελοντικά λογοθεραπευτικές υπηρεσίες σε ενήλικες
+                        με νευρολογικές παθήσεις, όπως Πάρκινσον, σκλήρυνση κατά πλάκας,
+                        νόσο του Alzheimer και πρώιμη άνοια.</p>
+                        <p class="lead">Στη συνέχεια, εργάστηκα σε πρότυπα ιδιωτικά κέντρα λογοθεραπείας και
+                            σε ιδρύματα με έμφαση στον παιδιατρικό πληθυσμό. Έχω εξειδικευτεί σε
+                            διαταραχές, όπως η πρώιμη παρέμβαση, ο αυτισμός, οι φωνολογικές και
+                            αρθρωτικές διαταραχές, η δυσπραξία, καθώς και οι πραγματολογικές και
+                            αναπτυξιακές γλωσσικές διαταραχές.</p>
+                    </div>
+                </div>
+            </div>
+        </section>        
         <section class="page-section" id="contact">
             <div class="container">
                 <!-- Contact Section Heading-->
