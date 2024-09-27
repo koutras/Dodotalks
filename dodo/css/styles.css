@@ -6043,8 +6043,19 @@ a.close.disabled {
   vertical-align: text-top !important;
 }
 
+#carouselExampleIndicators {
+  width: 600px; /* Set the desired fixed width */
+  margin: 0 auto; /* Center the carousel */
+}
+
+.carousel-inner img {
+  height: 500px; /* Maintain aspect ratio */
+  width: 100%;
+  object-fit: cover; /* Crop the images to fit the height while maintaining aspect ratio */
+}
+
 .bg-primary {
-  background-image: url("../assets/img/dodo_bar.PNG");
+  background-image: url("../assets/img/dodo_bar.png");
 }
 
 a.bg-primary:hover, a.bg-primary:focus,
