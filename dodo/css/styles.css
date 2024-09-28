@@ -6048,7 +6048,7 @@ a.close.disabled {
 }
 
 .carousel-inner img {
-  height: 500px; /* Maintain aspect ratio */
+  height: 700px; /* Maintain aspect ratio */
   object-fit: cover; /* Crop the images to fit the height while maintaining aspect ratio */
 }
 
