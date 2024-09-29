@@ -61,6 +61,10 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
   display: block;
 }
 
+.playful-font {
+  font-family: 'Fredoka One', cursive;
+}
+
 @keyframes dodoAnim {
   0% {
     transform:translateY(2rem);
@@ -5987,6 +5991,34 @@ a.close.disabled {
   border-right-color: transparent;
   border-radius: 50%;
   animation: spinner-border 0.75s linear infinite;
+}
+
+.cookie-notification {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  z-index: 1000;
+}
+
+.cookie-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.cookie-container p {
+  margin: 0;
+  padding-right: 10px;
+}
+
+.cookie-container button {
+  margin-left: 10px;
 }
 
 .spinner-border-sm {

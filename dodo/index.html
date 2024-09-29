@@ -5,13 +5,27 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="author" content="A.K">
+    <meta name="google-site-verification" content="xurbZqkTozPRM_WLUbupYU6_bWzMXgmSOi8tNo1XDUI" />
     <meta name="description" content="Speech Therapy center - Κέντρο Λογοθεραπείας">
     <meta name="keywords"
-        content="Dodo talks, Λογοθεραπεία, λογοθεραπεία, λογοθεραπεια, κέντρο λόγου, speech therapy, λογοθεραπευτής, Μελίσσια, Πεντέλη">
+        content="Dodo talks, Λογοθεραπεία, λογοθεραπεία, λογοθεραπεια, κέντρο λόγου, speech therapy, λογοθεραπευτής, Μελίσσια, Πεντέλη, Λογοθεραπεία Βόρεια προάστια">
     <title>Dodo talks - κεντρο λογοθεραπείας</title>
-    <!-- Font Awesome icons (free version)-->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"
         crossorigin="anonymous"></script>
+    <!-- Cookies notification-->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const cookieNotification = document.getElementById('cookieNotification');
+            const acceptCookiesButton = document.getElementById('acceptCookies');
+    
+            // Check if cookies have been accepted
+            if (!localStorage.getItem('cookiesAccepted')) {
+                cookieNotification.style.display = 'block';
+            }
+        });
+    </script>
     <!-- Bootstrap core JS-->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
@@ -91,6 +105,9 @@
                     </li>
                     <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
                             href="#place">Ο Χώρος</a>
+                    </li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                        href="#offer"><span style="color: lightgreen;">Δωρεάν συνεδρία</span></a>
                     </li>
                     <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
                             href="#contact">Επικοινωνία</a>
@@ -502,6 +519,22 @@
                     </div>
                 </div>
         </section>
+        <section class="page-section bg-primary" id="offer">
+            <div class="container">
+                <h2 class="page-section-heading text-center text-uppercase playful-font"><span style="color: lightblue;">Δωρεαν Συνεδρια</span></h2>
+                <div class="divider-custom divider-light">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-8 mx-auto text-center">
+                        <p class="lead">Προσφέρουμε μια δωρεάν συνεδρια για όλους τους νέους πελάτες. Αυτό ειναι μια ευκαιρία να μας γνωρίσετε και να συζητήσουμε πως μπορούμε να βοηθήσουμε</p>
+                        <p class="lead">Καλέστε μας για να κανονονίσουμε την δωρεάν πρωτη συναντηση!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
         <section class="page-section" id="contact">
             <div class="container">
                 <!-- Contact Section Heading-->
@@ -515,12 +548,13 @@
                     <div class="divider-custom-line"></div>
                 </div>
                 <!-- Contact Section Content-->
-                <div class="row justify-content-center">
+
+                <div class="row justify-content-center ">
                     <div class="col-lg-4">
                         <div class="d-flex flex-column align-items-center">
                             <div class="icon-contact mb-3"><i class="fas fa-mobile-alt"></i></div>
-                            <div class="text-muted">Phone</div>
-                            <div class="lead font-weight-bold">6946944098</div>
+                            <div class="text-muted">Τηλέφωνο</div>
+                            <div class="lead font-weight-bold"><a href="tel:+306946944098">6946944098</a></p></div>
                         </div>
                     </div>
                     <div class="col-lg-4">
@@ -580,11 +614,14 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
         <!-- Third party plugin JS-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-        <!-- Contact form JS-->
-        <script src="assets/mail/jqBootstrapValidation.js"></script>
-        <script src="assets/mail/contact_me.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
+        <!-- <div class="cookie-notification" id="cookieNotification">
+            <div class="cookie-container">
+                <p>Χρησιμοποιούμε cookies για να βελτιώσουμε την γενικότερη εμπειρία. Συνεχίζοντας, συμφωνείτε στην χρηση τους.</p>
+                <button class="btn btn-primary" id="acceptCookies">Accept</button>
+            </div>
+        </div> -->
 </body>
 
 </html>
