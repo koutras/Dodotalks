@@ -62,7 +62,7 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 }
 
 .playful-font {
-  font-family: 'Fredoka One', cursive;
+  font-family: Helvetica, sans-serif;
 }
 
 @keyframes dodoAnim {
@@ -5993,7 +5993,7 @@ a.close.disabled {
   animation: spinner-border 0.75s linear infinite;
 }
 
-.cookie-notification {
+.cookie-banner {
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -6004,20 +6004,14 @@ a.close.disabled {
   z-index: 1000;
 }
 
-.cookie-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.cookie-container p {
+.cookie-banner p {
   margin: 0;
-  padding-right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.cookie-container button {
+.cookie-banner button {
   margin-left: 10px;
 }
 
